@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodycount Analyzer Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+    <!-- HOME PAGE -->
+    <div id="homePage" class="home-page">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" style="height: 16rem">
+            </div>
+            <h1>Bodycount Analyzer Pro</h1>
+            <p class="subtitle">Advanced AI-powered relationship history analysis using behavioral psychology and
+                pattern recognition</p>
+
+            <div class="features">
+                <h3>What We Analyze</h3>
+                <ul>
+                    <li>Behavioral patterns and psychology</li>
+                    <li>Relationship history analysis</li>
+                    <li>Dating app activity indicators</li>
+                    <li>Social interaction patterns</li>
+                    <li>Facial confidence analysis (optional)</li>
+                </ul>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="start-btn primary" onclick="startAnalysis()">
+                    Start Analysis
+                </button>
+            </div>
+
+            <p class="disclaimer">
+                This is an entertainment tool using behavioral analysis. Results are for fun and should not be taken
+                seriously.
+            </p>
+        </div>
+    </div>
+
+    <!-- FORM PAGE -->
+    <div id="formPage" class="form-page hidden">
+        <div class="container">
+            <div class="form-header">
+                <button class="back-arrow" onclick="goHome()">← Back</button>
+                <h2>Personal Analysis Form</h2>
+                <p>Please answer all questions honestly for accurate analysis</p>
+            </div>
+
+            <div class="progress-indicator">
+                <div class="progress-bar-form" id="formProgress"></div>
+                <span class="progress-text" id="progressText">0% Complete</span>
+            </div>
+
+            <form id="analysisForm" class="form-container">
+                <!-- Basic Information Section -->
+                <div class="form-section">
+                    <h3 class="section-title">📋 Basic Information</h3>
+
+                    <div class="question-group">
+                        <label>Full Name</label>
+                        <div class="hint">For personalized analysis</div>
+                        <input type="text" id="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="question-group">
+                        <label>Location</label>
+                        <input type="text" id="location" required placeholder="City, Country">
+                    </div>
+
+                    <div class="row">
+                        <div class="question-group col-6">
+                            <label>Height</label>
+                            <select id="height" required>
+                                <option value="">Select height</option>
+                                <option value="short">Below 5'4"</option>
+                                <option value="average">5'4" - 5'8"</option>
+                                <option value="tall">5'9" - 6'1"</option>
+                                <option value="very_tall">Above 6'1"</option>
+                            </select>
+                        </div>
+
+                        <div class="question-group col-6">
+                            <label>Date of Birth</label>
+                            <input type="date" id="dob" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relationship History Section -->
+                <div class="form-section">
+                    <h3 class="section-title">💕 Relationship History</h3>
+
+                    <div class="question-group">
+                        <label>Current Relationship Status</label>
+                        <select id="relationship_status" required>
+                            <option value="">Select status</option>
+                            <option value="single">Single and looking</option>
+                            <option value="talking">In talking stage</option>
+                            <option value="dating">Casually dating</option>
+                            <option value="relationship">In a relationship</option>
+                            <option value="complicated">It's complicated</option>
+                            <option value="not_looking">Single, not looking</option>
+                        </select>
+                    </div>
+
+                    <div class="question-group">
+                        <label>Relationship History Pattern</label>
+                        <div class="hint">Be completely honest</div>
+                        <select id="history_pattern" required>
+                            <option value="">Select your pattern</option>
+                            <option value="virgin">Never been in a relationship</option>
+                            <option value="one_long">One long-term relationship</option>
+                            <option value="few_serious">2-3 serious relationships</option>
+                            <option value="multiple_casual">Multiple casual relationships</option>
+                            <option value="serial_dating">Always dating someone</option>
+                            <option value="player_mode">I don't do relationships</option>
+                        </select>
+                    </div>
+
+                    <div class="question-group">
+                        <label>Dating Apps Usage</label>
+                        <select id="dating_apps" required>
+                            <option value="">Select usage level</option>
+                            <option value="never">Never used dating apps</option>
+                            <option value="tried_once">Tried once, didn't like it</option>
+                            <option value="occasional">Use occasionally</option>
+                            <option value="regular">Regular user</option>
+                            <option value="addicted">Multiple apps, very active</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Behavioral Analysis Section -->
+                <div class="form-section">
+                    <h3 class="section-title">🧠 Behavioral Analysis</h3>
+
+                    <div class="question-group">
+                        <label>Your Biggest Red Flag</label>
+                        <select id="red_flag" required>
+                            <option value="">Choose honestly</option>
+                            <option value="jealous">Get jealous easily</option>
+                            <option value="clingy">Too clingy/needy</option>
+                            <option value="player">Player mentality</option>
+                            <option value="commitment_issues">Commitment issues</option>
+                            <option value="trust_issues">Trust issues</option>
+                            <option value="emotional_unavailable">Emotionally unavailable</option>
+                            <option value="no_boundaries">Don't respect boundaries</option>
+                            <option value="perfect">I have no red flags</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Scenario Testing Section -->
+                <div class="form-section">
+                    <h3 class="section-title">🎭 Scenario Testing</h3>
+
+                    <div class="scenario-card">
+                        <h4>Scenario 1: You see your ex with someone new at a party</h4>
+                        <select id="scenario1" required>
+                            <option value="">How do you react?</option>
+                            <option value="mature">Act mature, say hi if needed</option>
+                            <option value="avoid">Avoid them completely</option>
+                            <option value="jealous">Try to make them jealous</option>
+                            <option value="leave">Leave immediately</option>
+                            <option value="drama">Start some subtle drama</option>
+                            <option value="stalk">Follow them around the party</option>
+                        </select>
+                    </div>
+
+                    <div class="scenario-card">
+                        <h4>Scenario 2: Someone takes 8+ hours to reply to your text</h4>
+                        <select id="scenario2" required>
+                            <option value="">Your reaction?</option>
+                            <option value="patient">Wait patiently, they're busy</option>
+                            <option value="double_text">Send another message</option>
+                            <option value="overthink">Overthink and panic</option>
+                            <option value="ignore_back">Ignore them back for longer</option>
+                            <option value="call_them">Call them immediately</option>
+                            <option value="confront">Ask why they took so long</option>
+                        </select>
+                    </div>
+
+                    <div class="scenario-card">
+                        <h4>Scenario 3: Your crush says they just want to be friends</h4>
+                        <select id="scenario3" required>
+                            <option value="">What's your move?</option>
+                            <option value="respect">Respect their decision</option>
+                            <option value="distance">Distance yourself</option>
+                            <option value="persist">Keep trying to change their mind</option>
+                            <option value="wait">Wait and hope they change their mind</option>
+                            <option value="move_on">Immediately move on to someone else</option>
+                            <option value="manipulate">Try to manipulate the situation</option>
+                        </select>
+                    </div>
+
+                    <div class="scenario-card">
+                        <h4>Scenario 4: You catch your partner liking their ex's photos</h4>
+                        <select id="scenario4" required>
+                            <option value="">How do you handle it?</option>
+                            <option value="ignore">Ignore it, it's just social media</option>
+                            <option value="discuss">Calmly discuss it with them</option>
+                            <option value="confront">Confront them aggressively</option>
+                            <option value="stalk_ex">Start stalking the ex</option>
+                            <option value="revenge">Like your ex's photos back</option>
+                            <option value="break_up">Consider it cheating, break up</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Photo Analysis Section -->
+                <div class="form-section">
+                    <h3 class="section-title">📸 Photo Analysis</h3>
+
+                    <div class="question-group">
+                        <label>Upload Photo (Optional)</label>
+                        <div class="hint">For confidence level and facial feature analysis</div>
+                        <div class="file-upload-area" onclick="document.getElementById('photo').click()">
+                            <input type="file" id="photo" accept="image/*" onchange="handlePhotoUpload(this)">
+                            <div class="upload-content">
+                                <div class="upload-icon">📸</div>
+                                <p id="photoText">Click to upload your best photo</p>
+                                <small>JPG, PNG up to 5MB</small>
+                            </div>
+                        </div>
+                        <img id="imagePreview" class="image-preview hidden" alt="Preview">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="analyze-btn">
+                        Run Complete Analysis
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOADING PAGE -->
+    <div id="loadingPage" class="loading-container hidden">
+        <div class="container">
+            <div class="loading-card">
+                <div class="loading-spinner"></div>
+                <h2>AI Analysis in Progress</h2>
+                <div class="loading-text" id="loadingText">Initializing neural networks...</div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-percentage" id="progressPercentage">0%</div>
+                </div>
+
+                <div class="console-container">
+                    <div class="console-header">
+                        <span class="console-title">AI Console</span>
+                        <div class="console-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="console-output" id="consoleOutput"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT PAGE -->
+    <div id="resultPage" class="result-container hidden">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>🎯 Analysis Complete</h2>
+                    <div class="confidence-score">
+                        <span>Accuracy: </span>
+                        <span class="score">94.2%</span>
+                    </div>
+                </div>
+
+                <div class="bodycount-section">
+                    <div class="reaction-emoji" id="reactionEmoji">😱</div>
+                    <div class="bodycount-display" id="bodycountNumber">0</div>
+                    <div class="category-badge" id="categoryBadge">Category</div>
+                </div>
+
+                <div class="roast-section">
+                    <h4>🔥 AI Analysis & Reality Check</h4>
+                    <div class="roast-content">
+                        <div class="roast-text" id="roastText">
+                            Loading your personalized roast...
+                        </div>
+                    </div>
+                </div>
+
+                <div id="redFlagsSection" class="red-flags-section hidden">
+                    <h4>🚩 Major Red Flags Detected</h4>
+                    <div class="red-flags-content" id="redFlagsContent">
+                        <!-- Red flags will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="retry-btn" onclick="goHome()">
+                        <span>🔄</span>
+                        Analyze Someone Else
+                    </button>
+                    <button class="share-btn" onclick="shareResult()">
+                        <span>📤</span>
+                        Share Result
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast hidden">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
