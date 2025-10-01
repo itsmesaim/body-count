@@ -32,46 +32,202 @@ const CONSOLE_LOGS = [
 // City-specific roasts
 const CITY_ROASTS = {
     'mumbai': [
-        "Mumbai mein rehke bhi tumhara love life local train jaisa slow hai",
-        "Bandra ke clubs mein jaake bhi kuch nahi mila? Pathetic!",
-        "Marine Drive pe dates karte the ya sirf selfies lete the?",
-        "Mumbai ki traffic se bhi zyada confusing hai tumhari dating life"
+        "{name}, Mumbai mein rehke bhi tera love life local train se slow hai. Bandra ke hipster cafes mein chai piyega ya date pe jaayega?",
+        "Marine Drive pe couple dekhkar tujhe motivation milti hai ya depression? Tere bodycount se toh cutting chai ka bill bhi zyada hai!",
+        "Bhai {name}, Juhu beach pe sandcastles banata hai ya bas Tinder pe swipe karta hai? Result toh dono mein zero hi hai!",
+        "Mumbai ki crowd mein bhi tera love life itna khali? Bhai, CST station ka platform bhi tujhse zyada busy hai!"
     ],
     'delhi': [
-        "Delhi NCR mein rehke bhi tumhari bodycount itni kam? Kya kar rahe the bhai?",
-        "CP mein hangout karte the ya bas metro mein ladkiyon ko dekhte the?",
-        "Delhi ki pollution se zyada toxic tum ho relationships mein",
-        "Gurgaon ke clubs mein bhi koi nahi pati? Sed lyf!"
+        "{name}, Delhi mein rehke bhi tera bodycount DTC bus ke passengers se kam? Gurgaon ke clubs mein jaake kya selfie hi khinchta hai?",
+        "CP ke gol chakkar jaisa hai tera dating life, {name} - ghumta rehta hai, par kahin pohchta nahi!",
+        "Delhi ki winters mein bhi tera love life itna cold? Bhai, thodi si sharam toh banta hai!",
+        "{name}, Rajouri Garden ke momos se zyada spicy toh tera ego hai, lekin dates kahan hai?"
     ],
     'bangalore': [
-        "Bangalore ke IT hub mein rehke bhi debugging nahi kar sake apni love life?",
-        "Koramangala ki pubs mein jaake bhi single? Kya baat hai!",
-        "Bangalore traffic mein stuck rehte ho ya relationships mein bhi?",
-        "Tech capital mein rehke bhi love algorithm crack nahi kar sake?"
+        "Bangalore mein IT job aur tera bodycount dono mein same vibe hai, {name} - 'Under Maintenance'. Koramangala pubs mein kya code debug karta hai?",
+        "{name}, Bangalore traffic mein stuck hone ka excuse chhod de, tera dating game toh permanently jammed hai!",
+        "MG Road pe designer coffee peeta hai ya bas single life ka dukh? {name}, thodi personality bhi develop kar le!",
+        "Bhai {name}, Bangalore ke startups se zyada crash tera love life karta hai. Funding mil gayi kya?"
     ],
     'hyderabad': [
-        "Hyderabad ki biryani se zyada spicy tumhare red flags hain",
-        "HITEC City mein job hai but dating skills zero? Classic!",
-        "Charminar dekh kar romantic feel aayi ya bas selfie li?",
-        "Telangana formation se pehle ka lagta hai tumhara last relationship"
+        "{name}, Hyderabad ki biryani se zyada spicy tera attitude hai, lekin dating mein toh plain rice jaisa hai tu!",
+        "Charminar ke chaar minar dekhkar romantic feel aaya ya bas Instagram ke liye pose kiya, {name}? Love life toh wahi ka wahi hai!",
+        "HITEC City mein job hai, lekin dating skills kahan hai, {name}? Bhai, thodi training le le!",
+        "{name}, Hyderabad ke haleem jaisa rich tera confidence hai, par bodycount kyun itna khokhla hai?"
     ],
     'pune': [
-        "Pune ke colleges mein padhke bhi kuch nahi seekha dating ke baare mein?",
-        "FC Road pe roaming karte the ya bas books leke ghar jaate the?",
-        "Pune ki weather jaisi boring hai tumhari love life bhi",
-        "IT parks mein kaam karte ho but love life mein permanent bug hai"
+        "Pune ke colleges mein party karta hai ya bas single life ka syllabus padhta hai, {name}? Result toh fail hi hai!",
+        "{name}, FC Road pe vibe check karta hai ya bas vibe kharab karta hai? Dating mein toh zero marks!",
+        "Pune ki chill weather mein bhi tera love life itna dry? Bhai, Osho ashram mein meditation try kar le!",
+        "{name}, IT parks mein code likhta hai, lekin love life ka code kabhi compile hi nahi hota!"
     ],
     'chennai': [
-        "Chennai mein Marina Beach pe jaake bhi waves nahi aaye love life mein?",
-        "Filter coffee se zyada bitter ho tumhare relationships",
-        "Tamil cinema dekh dekh kar expectations zyada ho gayi kya?",
-        "IT corridor mein kaam hai but love corridor mein traffic jam?"
+        "{name}, Chennai ke beaches pe sunset dekhkar romantic vibe aati hai ya bas filter coffee ke saath dukh bhulta hai?",
+        "Marina Beach ka sand tera love life se zyada stable hai, {name}. Thodi effort toh banta hai!",
+        "Chennai ke auto walon se zyada attitude tera hai, {name}, lekin dates kahan hain? Zero negotiation skills!",
+        "{name}, Tamil movies ke dialogues seekh liye, par dating ka script kyun nahi likha ab tak?"
     ],
     'kolkata': [
-        "Kolkata ki adda culture mein participate karte ho ya bas single adda maarte ho?",
-        "Park Street pe jaake bhi koi park nahi mili? Sad!",
-        "Fish market jaisi smell aa rahi hai tumhari dating history se",
-        "Durga Puja mein celebration karte ho ya celebration ka wait karte rehte ho?"
+        "Kolkata ki mishti kha kar bhi tera love life itna kadwa kyun, {name}? Rosogulla se thodi sweetness seekh le!",
+        "{name}, Park Street ke bars mein party karta hai ya bas tram mein single life ka safar? Bhai, kuch progress kar!",
+        "Durga Puja ke pandals mein vibe check karta hai ya bas crowd mein khada rehta hai, {name}? Love life toh empty hai!",
+        "{name}, Kolkata ke intellectuals ke saath adda maar, par dating mein kyun itna backward hai?"
+    ],
+    'ahmedabad': [
+        "{name}, Ahmedabad mein rehke bhi tera bodycount itna dry? Sabarmati riverfront pe dates ke bajaye selfies hi li kya?",
+        "Gujju thali jaisa variety tera attitude mein hai, {name}, lekin dating mein toh sirf khichdi hai!",
+        "{name}, Manek Chowk ke midnight snacks se zyada spicy toh tera ego hai, par love life kyun itna sada?",
+        "Bhai {name}, IIM Ahmedabad ke students se dating tips le le, tera game toh local kite festival se bhi low hai!"
+    ],
+    'jaipur': [
+        "{name}, Jaipur ke forts dekhkar history seekha, lekin apna dating history kyun blank hai? Thodi sharam kar le!",
+        "Hawa Mahal ke jharokhon jaisa transparent hai tera love life, {name} - bilkul khali aur hawa hi hawa!",
+        "Pink City mein bhi tera dating game itna pale? {name}, thodi color add kar apne moves mein!",
+        "{name}, Jaipur ke bazaars mein shopping karta hai ya bas single life ka stock khareedta hai?"
+    ],
+    'goa': [
+        "Goa mein beaches aur parties ke bawajood tera bodycount zero, {name}? Bhai, trance music se dating skills nahi aati!",
+        "{name}, Baga beach pe party karta hai ya bas single life ka dukh drown karta hai coconut water mein?",
+        "Goa ke vibes itne chill hain, lekin tera love life kyun itna still hai, {name}? Thodi movement toh banta hai!",
+        "{name}, Goa mein sunsets dekhkar romantic feel aaya ya bas Instagram ke liye reels banaye? Love life toh wahi ka wahi!"
+    ],
+    'lucknow': [
+        "{name}, Lucknow ke nawabi andaaz mein toh tu shahenshah hai, par tera love life kyun gali ke kutto se bhi sad hai?",
+        "Bhai {name}, Hazratganj mein tashan maarne ka time hai, lekin dates kaun dega? Tera bodycount toh kebab ka bill bhi nahi cross karta!",
+        "Lucknow ki tehzeeb se seekha kya, {name}? Tera dating game toh Chikankari se bhi zyada outdated hai!",
+        "{name}, Gomti river pe evening walk karta hai ya bas single life ka dukh sahta hai? Thodi shayari toh banta hai!"
+    ],
+    'kanpur': [
+        "{name}, Kanpur mein leather jacket pehen ke swag dikhata hai, par tera love life kyun local daaru jaisa sasta hai?",
+        "Bhai {name}, Kanpur ke malls mein shopping karta hai ya bas Tinder pe window shopping? Tera bodycount toh zero stock hai!",
+        "{name}, Kanpur ka industrial vibe hai, lekin tera dating game kyun closed factory jaisa hai? Restart kar bhai!",
+        "Arre {name}, Kanpur ke chaat stalls se zyada spicy toh tera ego hai, par love life kyun itna bekaar hai?"
+    ],
+    'patna': [
+        "{name}, Patna mein Ganga ke paas romance sochta hai, par tera bodycount toh Gandhi Maidan ke crowd se bhi kam hai!",
+        "Bhai {name}, Patna ke litti-chokha kha kar bhi tera love life itna bland kyun? Thodi spice add kar na!",
+        "{name}, Patna ke coaching classes mein padhta hai ya bas single life ka syllabus? Bhai, dating mein bhi topper ban!",
+        "Arre {name}, Patna ke traffic jaisa chaotic toh tera dating history hai, par action kahan hai?"
+    ],
+    'gaya': [
+        "{name}, Gaya mein Bodh Gaya ke peace vibe ke bawajood tera love life kyun war zone jaisa hai? Zen mode on kar!",
+        "Bhai {name}, Gaya ke pind daan karne aata hai ya bas apne dating game ka daan karta hai? Zero results, bro!",
+        "{name}, Gaya ke temples mein dua maangta hai, par love life ke liye bhi dua karni padegi lagta hai!",
+        "Arre {name}, Gaya ka spiritual vibe hai, lekin tera bodycount kyun ghost town jaisa khali hai?"
+    ],
+    'amritsar': [
+        "{name}, Amritsar ke Golden Temple ke saamne selfie kheenchta hai, par tera love life kyun langar ke plate jaisa khali hai?",
+        "Bhai {name}, Punjabi swag toh hai, lekin dating mein kyun zero bhangra? Thodi rhythm la bhai!",
+        "{name}, Amritsar ke jalebi kha kar bhi tera love life itna kadwa? Thodi sweetness toh banta hai!",
+        "Arre {name}, Wagah border pe attitude dikhata hai, par dating mein kyun retreat karta hai?"
+    ],
+    'ludhiana': [
+        "{name}, Ludhiana ke Punjabi vibes ke saath bhi tera bodycount itna low? Bhai, thodi sharam kar le!",
+        "Bhai {name}, Ludhiana ke malls mein swag dikhata hai, par dates kahan hai? Tera love life toh local dhaba jaisa sasta hai!",
+        "{name}, Ludhiana ka tashan toh hai, lekin dating game kyun local bus ke jaisa slow hai?",
+        "Arre {name}, Ludhiana ke suit-salwar ke bazaar mein vibe hai, par tera love life kyun tailor ke bina ka kapda hai?"
+    ],
+    'srinagar': [
+        "{name}, Srinagar ke Dal Lake pe shikara ride sochta hai, par tera love life kyun dry land jaisa hai?",
+        "Bhai {name}, Kashmir ke apples se zyada red toh tera face hai rejection ke baad! Thodi himmat rakh!",
+        "{name}, Srinagar ke gardens mein romance dhundta hai, par tera bodycount kyun barren valley jaisa hai?",
+        "Arre {name}, Kashmir ka paradise vibe hai, lekin tera dating game kyun hell jaisa feel hota hai?"
+    ],
+    'coimbatore': [
+        "{name}, Coimbatore ke IT hubs mein kaam karta hai, par tera love life kyun 90s ke dial-up jaisa slow hai?",
+        "Bhai {name}, Coimbatore ke temples mein dua maangta hai, par dating ke liye bhi dua chahiye lagta hai!",
+        "{name}, Coimbatore ka coconut water pita hai, par tera love life kyun itna dry hai? Thodi hydration toh banta hai!",
+        "Arre {name}, Coimbatore ke chill vibes ke bawajood tera dating game kyun freezer mein stuck hai?"
+    ],
+    'madurai': [
+        "{name}, Madurai ke Meenakshi Temple ke darshan karta hai, par tera love life kyun darshan ke layak nahi?",
+        "Bhai {name}, Madurai ke jigar thanda pita hai, par tera dating game kyun itna thanda hai? Heat up kar bhai!",
+        "{name}, Madurai ke vibrant markets mein vibe hai, par tera bodycount kyun empty cart jaisa hai?",
+        "Arre {name}, Madurai ka spicy food kha kar bhi tera love life kyun plain dosa jaisa boring hai?"
+    ],
+    'mysore': [
+        "{name}, Mysore ke palaces mein royalty ka sapna dekhta hai, par tera love life kyun roadside stall jaisa hai?",
+        "Bhai {name}, Mysore ke Dasara festival mein vibe karta hai, par dating mein kyun zero celebration?",
+        "{name}, Mysore ka sandalwood scent hai, par tera love life kyun badboo jaisa feel hota hai?",
+        "Arre {name}, Mysore ke yoga vibes ke bawajood tera dating game kyun out of balance hai?"
+    ],
+    'hubli': [
+        "{name}, Hubli ke bazar mein tashan dikhata hai, par tera love life kyun local bus stand jaisa khali hai?",
+        "Bhai {name}, Hubli-Dharwad ke twin city vibe mein bhi tera bodycount single kyun hai? Thodi hustle kar!",
+        "{name}, Hubli ka spicy food kha kar bhi tera dating game kyun itna bland? Thodi masala add kar na!",
+        "Arre {name}, Hubli ke chill vibes ke saath bhi tera love life kyun stuck in traffic jaisa hai?"
+    ],
+    'thiruvananthapuram': [
+        "{name}, Thiruvananthapuram ke backwaters mein romance sochta hai, par tera love life kyun dry canal jaisa hai?",
+        "Bhai {name}, Kerala ke coconut trees ke neeche chill karta hai, par dates kahan hai? Tera bodycount toh nariyal paani ka stock bhi nahi!",
+        "{name}, Trivandrum ka laid-back vibe hai, lekin tera dating game kyun coma mein chala gaya? Wake up, bro!",
+        "Arre {name}, Thiruvananthapuram ke beaches pe pose karta hai, par tera love life kyun tsunami ke baad ka khali beach hai?"
+    ],
+    'kochi': [
+        "{name}, Kochi ke hip cafes mein coffee peeta hai, par tera love life kyun filter coffee se bhi zyada kadwa hai?",
+        "Bhai {name}, Kochi ke Chinese fishing nets ke saamne photo kheenchta hai, par dates catch kyun nahi karta?",
+        "{name}, Kochi ka port city vibe hai, lekin tera dating game kyun sinking ship jaisa hai? Thodi sailing kar!",
+        "Arre {name}, Kochi ke spice markets se inspiration le, par tera love life kyun plain sadam jaisa boring hai?"
+    ],
+    'surat': [
+        "{name}, Surat ke diamond markets mein shine karta hai, par tera love life kyun fake jewellery jaisa dull hai?",
+        "Bhai {name}, Surat ke street food kha kar bhi tera dating game kyun khichdi jaisa bland? Thodi spice daal na!",
+        "{name}, Surat ka business hustle toh hai, lekin tera bodycount kyun zero profit jaisa hai? Invest kar, bro!",
+        "Arre {name}, Surat ke textile bazaar mein swag hai, par tera love life kyun unstitched kapda jaisa hai?"
+    ],
+    'siliguri': [
+        "{name}, Siliguri ke Northeast gateway vibe mein bhi tera love life kyun dead-end road jaisa hai?",
+        "Bhai {name}, Siliguri ke tea gardens mein chill karta hai, par tera bodycount kyun chai ke kettle se bhi chhota hai?",
+        "{name}, Siliguri ka vibrant market hai, lekin tera dating game kyun empty stall jaisa khali hai?",
+        "Arre {name}, Siliguri ke border vibes ke bawajood tera love life kyun no-entry zone mein stuck hai?"
+    ],
+    'udaipur': [
+        "{name}, Udaipur ke romantic lakes ke saamne bhi tera love life kyun dry desert jaisa hai? Thodi romance try kar!",
+        "Bhai {name}, Udaipur ke palaces mein royalty ka sapna dekhta hai, par tera bodycount kyun beggar jaisa zero hai?",
+        "{name}, Udaipur ka love city vibe hai, lekin tera dating game kyun arranged marriage ke rishte jaisa fail hai?",
+        "Arre {name}, Udaipur ke sunset views ke bawajood tera love life kyun black-and-white movie jaisa boring hai?"
+    ],
+    'new york': [
+        "{name}, New York ke skyscrapers ke beech bhi tera bodycount ground floor pe hai? Bhai, Times Square mein bhi date nahi milta?",
+        "Arre {name}, NYC ka hustle vibe hai, par tera dating game kyun subway ke delay jaisa hai? Thodi speed la!",
+        "{name}, New York ke coffee shops mein vibe karta hai, par tera love life kyun Starbucks ke queue jaisa stuck hai?",
+        "Bhai {name}, NYC ke Tinder scene mein bhi tera profile unnoticed? Empire State Building se bhi low hai tera game!"
+    ],
+    'london': [
+        "{name}, London ke foggy vibes mein bhi tera love life itna unclear kyun? Bhai, Big Ben ke time pe toh match kar le!",
+        "Arre {name}, London ke pubs mein pint peeta hai, par dates kahan hai? Tera bodycount toh Thames ke paani jaisa flat hai!",
+        "{name}, London ke royal vibes ke bawajood tera dating game kyun commoner jaisa hai? Thodi class add kar!",
+        "Bhai {name}, London Underground mein travel karta hai, par tera love life kyun underground hi reh gaya?"
+    ],
+    'dubai': [
+        "{name}, Dubai ke skyscrapers ke saath bhi tera bodycount desert jaisa khali hai? Bhai, Burj Khalifa se bhi upar soch!",
+        "Arre {name}, Dubai ke malls mein shopping karta hai, par dates kyun nahi shop kar paaya? Tera game toh souk se bhi sasta hai!",
+        "{name}, Dubai ka luxury vibe hai, par tera love life kyun camel ride jaisa bumpy hai? Smooth kar na!",
+        "Bhai {name}, Dubai ke gold souk mein shine karta hai, par tera dating game kyun fake jewellery jaisa hai?"
+    ],
+    'sydney': [
+        "{name}, Sydney ke beaches pe surf karta hai, par tera love life kyun deep ocean mein doob gaya? Bhai, swim kar na!",
+        "Arre {name}, Sydney Opera House ke saamne pose karta hai, par tera dating game kyun off-tune hai?",
+        "{name}, Sydney ke chill vibes ke bawajood tera bodycount kyun kangaroo jaisa jump nahi karta? Thodi energy la!",
+        "Bhai {name}, Sydney ke nightlife mein party karta hai, par tera love life kyun outback jaisa deserted hai?"
+    ],
+    'tokyo': [
+        "{name}, Tokyo ke neon lights mein bhi tera love life itna dark kyun? Bhai, Shibuya crossing pe koi toh match kar le!",
+        "Arre {name}, Tokyo ke anime vibes ke saath bhi tera dating game kyun 2D cartoon jaisa flat hai?",
+        "{name}, Tokyo ke sushi kha kar bhi tera bodycount kyun raw fish jaisa tasteless hai? Thodi spice add kar!",
+        "Bhai {name}, Tokyo ka high-tech vibe hai, par tera love life kyun old Nokia phone jaisa stuck hai?"
+    ],
+    'paris': [
+        "{name}, Paris ke Eiffel Tower ke neeche romance sochta hai, par tera love life kyun roadside crepe jaisa flat hai?",
+        "Bhai {name}, Paris ka romance capital vibe hai, lekin tera bodycount kyun French baguette jaisa dry hai?",
+        "{name}, Paris ke cafes mein coffee peeta hai, par tera dating game kyun overpriced croissant jaisa bekaar hai?",
+        "Arre {name}, Paris ke love locks ke bawajood tera love life kyun unlocked aur khali hai? Thodi spark toh la!"
+    ],
+    'singapore': [
+        "{name}, Singapore ke clean streets mein bhi tera love life kyun messy breakup jaisa hai? Bhai, thodi safai kar!",
+        "Bhai {name}, Marina Bay Sands ke saamne pose karta hai, par tera bodycount kyun zero balance jaisa hai?",
+        "{name}, Singapore ka high-tech vibe hai, lekin tera dating game kyun 90s ke pager jaisa outdated hai?",
+        "Arre {name}, Singapore ke Gardens by the Bay mein vibe karta hai, par tera love life kyun wilting plant jaisa hai?"
     ]
 };
 
@@ -109,49 +265,151 @@ const HEIGHT_ROASTS = {
     ]
 };
 
-// Enhanced brutal roast messages with extreme variety
+// Vibe-specific roasts
+const VIBE_ROASTS = {
+    'chill': [
+        "{name}, chill vibe ka tag laga hai, lekin dating mein itna ice kyun? Antarctica relocate kar gaya kya?",
+        "Chill vibes bolta hai, {name}, par tera love life toh deep freezer mein hai! Thaw karo thodi der!",
+        "{name}, Netflix and chill tera motto hai, lekin Netflix ke alawa koi chill karta hi nahi tujhse!",
+        "Bhai {name}, itna chill vibe hai ki glaciers bhi jealous hain, par dating mein koi heat kyun nahi?"
+    ],
+    'party': [
+        "{name}, party vibe hai, par har party mein tu stage pe nahi, bar counter pe akela kyun? Shots hi lete reh gaya!",
+        "Party animal bolta hai, {name}, lekin dance floor pe koi partner kyun nahi? Solo dance king hai kya?",
+        "{name}, har weekend party karta hai, par tera bodycount club ke entry fee se bhi kam hai!",
+        "Bhai {name}, party vibe toh thik hai, lekin dating mein kyun disco ball jaisa spin karta rehta hai?"
+    ],
+    'introvert': [
+        "{name}, introvert vibe bolta hai, par itna shy kyun? Dating app pe bhi mute button daba rakha hai kya?",
+        "Introvert hai, {name}, lekin tera love life toh library ke silent zone jaisa hai! Thodi awaaz karo!",
+        "{name}, books aur coffee ke saath vibe thik hai, par dating mein kyun blank page jaisa hai tu?",
+        "Bhai {name}, introvert vibe ka excuse band kar, tera social battery toh dating ke liye kabhi charge hi nahi hota!"
+    ],
+    'extrovert': [
+        "{name}, extrovert vibe mein sabko baatein karta hai, par dating mein kyun silent movie chal rahi hai?",
+        "Extrovert bolta hai, {name}, lekin har party mein sirf dost banata hai, girlfriend/boyfriend kahan?",
+        "{name}, tera extrovert vibe toh social media pe dikhayi deta hai, real life mein dates kyun cancel hote hain?",
+        "Bhai {name}, itna extrovert vibe hai ki mic chahiye, lekin dating mein kyun speaker mute hai?"
+    ],
+    'mysterious': [
+        "{name}, mysterious vibe ka dikhawa karta hai, par tera love life itna mysterious kyun ki koi samajh hi nahi paata?",
+        "Mysterious vibe bolta hai, {name}, lekin tera bodycount toh Bermuda Triangle mein gayab ho gaya!",
+        "{name}, itna mystery rakhta hai ki Sherlock Holmes bhi tera dating history nahi solve kar sakta!",
+        "Bhai {name}, mysterious vibe toh thik hai, par dating mein kyun alien invasion jaisa silence hai?"
+    ]
+};
+
+// New Scenario-specific roasts
+const SCENARIO_ROASTS = {
+    'scenario5': {
+        'own_it': [
+            "{name}, galat DM bheja aur fir bhi flirt karta hai? Bhai, tera confidence toh Elon Musk ko bhi sharminda kar de!",
+            "Arre {name}, wrong DM ke baad bhi flirt? Ye toh Bollywood ke hero wala overconfidence hai, par love life kahan?",
+            "{name}, galat insaan ko DM karke bhi game chala raha hai? Respect, lekin thoda dimag bhi laga le next time!"
+        ],
+        'apologize': [
+            "{name}, galat DM ke liye maafi maangta hai? Bhai, itna polite toh customer care wale bhi nahi hote!",
+            "Arre {name}, sorry bolke scene clear karta hai? Tera love life toh apology letter jaisa hi hai - boring aur repetitive!",
+            "{name}, maafi maang ke DM ka scene band kiya? Bhai, thodi himmat dikha, warna single hi rahega!"
+        ],
+        'ghost': [
+            "{name}, galat DM bheja aur ghost kar diya? Bhai, tera love life toh WhatsApp ke 'last seen' jaisa vanish ho jata hai!",
+            "Arre {name}, DM galat gaya toh ghost mode on? Tera dating game toh horror movie ka sequel hai!",
+            "{name}, ghost karke problem solve karta hai? Bhai, tera bodycount bhi tujhse ghosted ho chuka hai!"
+        ],
+        'delete': [
+            "{name}, DM delete karke socha sab set hai? Bhai, tera love life bhi delete button ke layak hai!",
+            "Arre {name}, galat DM delete kiya aur pray karta hai? Tera dating game toh Instagram ke archived posts jaisa hai!",
+            "{name}, delete karke bhagwan pe chhod diya? Bhai, dating mein thodi strategy bhi laga le!"
+        ],
+        'blame': [
+            "{name}, galat DM ke liye dost ya autocorrect ko blame karta hai? Bhai, tera excuse game toh Oscar worthy hai!",
+            "Arre {name}, blame game khelta hai DM ke baad? Tera love life bhi kisi aur ke wajah se kharab hai kya?",
+            "{name}, autocorrect ka bahana banaya? Bhai, tera dating history bhi autocorrect nahi kar sakta!"
+        ],
+        'escalate': [
+            "{name}, galat DM ke baad aur ek bhej diya? Bhai, tera confidence toh Avengers level ka hai, par brain kahan gaya?",
+            "Arre {name}, ek galat DM ke baad doosra? Ye toh dating mein nuclear war chhedne wala move hai!",
+            "{name}, escalate karke DM ka scene banaya? Bhai, tera love life toh action movie ka climax hai!"
+        ]
+    },
+    'scenario6': {
+        'play_cool': [
+            "{name}, date ka profile pic fake nikla aur tu cool bana raha? Bhai, tera patience toh Dalai Lama ko bhi impress kar de!",
+            "Arre {name}, fake pic wale date ke saath cool rehna? Tera love life toh Photoshop se bhi fix nahi ho sakta!",
+            "{name}, play it cool karta hai fake date ke saath? Bhai, tera vibe toh meme template ban sakta hai!"
+        ],
+        'call_out': [
+            "{name}, fake pic wale ko politely call out kiya? Bhai, itna decent toh UPSC aspirants bhi nahi hote!",
+            "Arre {name}, polite call out karke kya fayda? Tera dating game toh debate competition jaisa hai - no action!",
+            "{name}, fake pic pe politely bol diya? Bhai, thodi spice add kar, warna love life bland hi rahega!"
+        ],
+        'bail': [
+            "{name}, fake pic dekhkar date se bhaag gaya? Bhai, tera escape game toh Mission Impossible se bhi fast hai!",
+            "Arre {name}, excuse banake date chhod diya? Tera love life toh Uber cancel button jaisa hai!",
+            "{name}, bail karke scene clear kiya? Bhai, tera bodycount bhi tujhse bail maar chuka hai!"
+        ],
+        'savage': [
+            "{name}, fake pic pe savage comment maara? Bhai, tera roast game toh Comedy Nights se bhi better hai!",
+            "Arre {name}, savage ban ke date pe comment kiya? Tera love life toh Twitter war jaisa hai - full drama!",
+            "{name}, savage comment karke date pe raha? Bhai, tera confidence toh meme lord level ka hai!"
+        ],
+        'ghost_date': [
+            "{name}, date ke beech mein ghost kiya? Bhai, tera love life toh horror movie ka plot twist hai!",
+            "Arre {name}, fake pic dekhkar mid-date ghost? Tera dating game toh Snapchat streaks jaisa temporary hai!",
+            "{name}, ghost karke date se gayab? Bhai, tera bodycount bhi tujhse ghosted ho chuka hai!"
+        ],
+        'rate': [
+            "{name}, date ko vibe check karke rate kiya? Bhai, tera love life toh Zomato review section jaisa hai!",
+            "Arre {name}, vibe rate karke date ka faisla? Tera dating game toh Google Forms ka survey lagta hai!",
+            "{name}, fake pic wale ko rating diya? Bhai, thodi reality check bhi kar le, warna single hi rahega!"
+        ]
+    }
+};
+
+// Brutal roast messages
 const BRUTAL_ROASTS = {
     virgin: [
-        "Dekho {name}, tumhara bodycount Google search history se bhi kam hai. 18+ content dekh dekh kar experience gain kar rahe ho kya? Real life mein try karo kabhi!",
-        "{name}, tumhari virginity itni sacred hai ki museum mein rakh deni chahiye. Archaeological department ko donate kar do - rare specimen hai!",
-        "Bhai {name}, tumhara love life desert se bhi dry hai. Last time koi touch kiya tha doctor ne injection lagane ke liye? Therapy lelo yaar!",
-        "{name}, tumhara social anxiety itna high hai ki mirror mein dekh kar bhi blush kar jaate ho. Dating apps download karo, kam se kam rejection ka practice toh ho!"
+        "Arre {name}, tera bodycount itna clean hai ki Durex wale tujhe brand ambassador bana denge! {age} saal mein bhi koi action nahi? Bhai, ab toh Netflix bhi bore ho gaya hoga!",
+        "{name}, tera love life itna pure hai ki Himalaya ka mineral water bhi jealous hai. Kabhi Tinder pe swipe karke paap toh kar le!",
+        "Bhai {name}, tera dating history blank Google Doc jaisa hai. {age} saal aur kitna wait karega? Ctrl+S toh kar life mein!",
+        "{name}, tera bodycount zero hai aur confidence 100? Bhai, ye optimism TED Talk mein le ja, dating mein nahi chalega!"
     ],
     innocent: [
-        "{name}, tumhari innocence dekh kar kindergarten ke bachhe bhi experienced lag rahe hain. Thoda reality mein aao beta!",
-        "Yaar {name}, tumhari dating timeline snail ki speed se bhi slow hai. Koi time machine hai kya jo past mein stuck ho?",
-        "{name}, tumhara romantic experience negative numbers mein hai. Calculator crash ho jata hai tumhara score calculate karte time!",
-        "Dekho {name}, tumhari love story nursery rhymes se bhi simple hai. Jack and Jill se inspiration leke dating try karo!"
+        "{name}, tera love life itna innocent hai ki nursery rhymes bhi blush kar dein. {age} saal mein ek bhi date? Bhai, cartoon network band kar!",
+        "Arre {name}, tera dating game itna slow hai ki 2G network bhi fast lagta hai. Thodi speed badhao, ya WhatsApp forward hi karte rehna hai?",
+        "{name}, tera bodycount itna low hai ki calculator error de raha hai. {age} saal aur abhi bhi 'first kiss' ka wait? Disney princess banega kya?",
+        "Bhai {name}, tera love life itna innocent hai ki DDLJ ke dialogues bhi outdated lagte hain. Thodi reality mein aa, yaar!"
     ],
     normal: [
-        "{name}, tumhara track record dekh kar lag raha hai life mein autopilot mode on hai. Kuch exciting karo yaar!",
-        "Bhai {name}, tumhari dating life Excel spreadsheet jaisi organized aur boring hai. Thoda chaos add karo!",
-        "{name}, tumhara bodycount dekh kar mathematician bhi bore ho jaye. Average of averages ho tum!",
-        "Yaar {name}, tumhari love life Wikipedia article jaisi factual aur emotionless hai. Thoda masala add karo!"
+        "{name}, tera bodycount itna average hai ki Excel sheet mein bhi highlight nahi hota. {age} saal mein thodi excitement toh banta hai!",
+        "Arre {name}, tera dating life middle-class budget jaisa hai - safe aur boring. Kabhi risk leke dekh, ya bas {relationship_status} mode mein hi rehna hai?",
+        "{name}, tera love life itna normal hai ki Zomato ke 3-star reviews bhi zyada interesting hain. {age} saal aur bas itna? Thodi masala add kar!",
+        "Bhai {name}, tera bodycount itna standard hai ki CBSE ke marksheet jaisa lagta hai. Thodi extra-curricular activity try kar na!"
     ],
     experienced: [
-        "{name}, tumhara experience certificate ready hai kya? CV mein dating skills mention kar sakte ho ab!",
-        "Dekho {name}, tumhari reputation city mein famous hai. WhatsApp groups mein warning messages aa rahe honge tumhare liye!",
-        "{name}, tumhara track record dekh kar lag raha hai professional player ho. Olympics mein participate karo dating mein!",
-        "Bhai {name}, tumhari dating history novel ban sakti hai - '50 Shades of {name}' - bestseller guaranteed!"
+        "{name}, tera bodycount dekh kar lagta hai tu dating ka LinkedIn profile bana rakha hai. {age} saal mein itna experience? HR se promotion le le!",
+        "Arre {name}, tera dating history Netflix series jaisa hai - har season mein naya drama! {relationship_status} status kab change hoga?",
+        "{name}, tera love life itna spicy hai ki Swiggy ke 'hot' filter mein top pe aayega. Par {red_flag} wala vibe thoda control kar na!",
+        "Bhai {name}, tera bodycount dekh kar lagta hai tu Tinder ka beta-tester tha. {age} saal mein itna game? Respect, lekin thoda break le le!"
     ],
     player: [
-        "{name}, tumhara bodycount dekh kar census department confuse ho gaya hai. Population survey mein separate category banana padega!",
-        "Yaar {name}, tumhari dating apps subscription Amazon Prime se zyada expensive hogi. Bulk discount milta hai kya?",
-        "{name}, tumhara collection dekh kar Pokemon trainers bhi jealous ho jaye - 'Gotta catch em all' ki definition badal di tumne!",
-        "Bhai {name}, tumhari love life reality show ban sakti hai - 'Bigg Boss: {name} Edition' - TRP guaranteed!"
+        "{name}, tera bodycount itna high hai ki Census wale tujhe population survey mein include karna chahte hain. {age} saal aur itna game? Thoda chill kar!",
+        "Arre {name}, tera dating life IPL auction jaisa hai - har season naya player! {red_flag} wala attitude thoda kam kar, warna red card mil jayega!",
+        "{name}, tera bodycount dekh kar lagta hai tu dating apps ka CEO hai. {relationship_status} status mein bhi itna action? Bhai, masterclass de de!",
+        "Bhai {name}, tera love life Bollywood blockbuster jaisa hai - full drama, zero commitment. {age} saal mein kitna run maara, yaar?"
     ],
     legend: [
-        "{name}, tumhara naam dating hall of fame mein gold letters mein likha hona chahiye. Legend status achieve kar liya!",
-        "Dekho {name}, tumhara bodycount dekh kar mathematicians ne new number system invent karna pada. '{name} numbers' kehte hain ab!",
-        "Yaar {name}, tumhari dating strategy Harvard Business School mein case study ban sakti hai - 'How to scale in love market'!",
-        "{name}, tumhara track record dekh kar Guinness Book of World Records walon ne phone kiya hai kya? Application submit karo!"
+        "{name}, tera bodycount itna legendary hai ki historians tera case study likh rahe hain. {age} saal mein ye kaise kar liya, bhai? Secrets share kar!",
+        "Arre {name}, tera dating history Game of Thrones se bhi epic hai. {relationship_status} status mein bhi itna game? Iron Throne mangwa do!",
+        "{name}, tera bodycount dekh kar NASA wale bhi shock mein hain - ye toh intergalactic level ka hai! {red_flag} wala vibe thoda hide kar na!",
+        "Bhai {name}, tera love life Avengers movie jaisa hai - har scene mein naya hero/heroine! {age} saal mein ye sab kaise manage kiya?"
     ],
     menace: [
-        "{name}, tumhara naam sun kar therapists ki salary double ho jaati hai. Mental health industry ka GDP tumhari wajah se badh raha hai!",
-        "Bhai {name}, tumhari dating history horror movie se zyada scary hai. Stephen King bhi inspired ho jaye tumhari story se!",
-        "{name}, tumhara bodycount dekh kar calculator ne suicide note likh diya. Mathematics ke principles ko challenge kar diya tumne!",
-        "Yaar {name}, tumhari love life disaster management course mein syllabus ban sakti hai. Emergency protocols ki zarurat hai tumhare saath!"
+        "{name}, tera bodycount itna wild hai ki therapists ke liye new branch khul gaya. {age} saal aur itna chaos? Bhai, dating apocalypse band kar!",
+        "Arre {name}, tera dating history horror movie se zyada scary hai. {red_flag} wala vibe dekhkar toh Netflix ne 'thriller' category banayi!",
+        "{name}, tera bodycount dekhkar mathematicians ne new infinity symbol invent kiya. {relationship_status} status mein bhi ye sab? Bhai, calm down!",
+        "Bhai {name}, tera love life itna chaotic hai ki Marvel ke multiverse mein bhi tera mention hai. {age} saal mein ye sab kaise ho gaya?"
     ]
 };
 
@@ -212,6 +470,15 @@ function showToast(message, duration = 3000) {
     }, duration);
 }
 
+function showPromoToast() {
+    const promoToast = document.getElementById('promoToast');
+    promoToast.classList.remove('hidden');
+
+    setTimeout(() => {
+        promoToast.classList.add('hidden');
+    }, 5000);
+}
+
 function formatPercentage(value) {
     return Math.round(value) + '%';
 }
@@ -231,11 +498,13 @@ function showPage(pageId) {
         document.getElementById(id).classList.add('hidden');
     });
     document.getElementById(pageId).classList.remove('hidden');
+    trackPageView(pageId);
 }
 
 function startAnalysis() {
     showPage('formPage');
     updateFormProgress();
+    setTimeout(showPromoToast, 1500);
 }
 
 function goHome() {
@@ -322,6 +591,9 @@ function collectFormData() {
         scenario2: document.getElementById('scenario2').value,
         scenario3: document.getElementById('scenario3').value,
         scenario4: document.getElementById('scenario4').value,
+        scenario5: document.getElementById('scenario5').value,
+        scenario6: document.getElementById('scenario6').value,
+        vibe: document.getElementById('vibe').value,
         has_photo: document.getElementById('photo').files.length > 0,
         timestamp: new Date().toISOString()
     };
@@ -331,17 +603,16 @@ function collectFormData() {
 function generateLocalAnalysis(formData) {
     let score = 0;
     let redFlags = [];
-    let scoreModifier = Math.floor(Math.random() * 8) - 4; // Random -4 to +4
+    let scoreModifier = Math.floor(Math.random() * 8) - 4;  // Random -4 to +4
 
-    // Age calculation with brutal reality check
+
     const age = new Date().getFullYear() - new Date(formData.dob).getFullYear();
     if (age > 25) score += Math.floor((age - 18) / 1.5);
     if (age > 30) score += Math.floor((age - 25) / 1.2);
     if (age > 35) score += Math.floor((age - 30) / 1.1);
 
-    // Relationship history (main factor) - enhanced scoring
     const historyScores = {
-        'virgin': Math.random() < 0.3 ? 1 : 0, // Sometimes even virgins get points for lying
+        'virgin': Math.random() < 0.3 ? 1 : 0,
         'one_long': Math.floor(Math.random() * 3) + 1,
         'few_serious': Math.floor(Math.random() * 5) + 2,
         'multiple_casual': Math.floor(Math.random() * 8) + 5,
@@ -350,9 +621,8 @@ function generateLocalAnalysis(formData) {
     };
     score += historyScores[formData.history_pattern] || 0;
 
-    // Dating apps with enhanced brutality
     const appScores = {
-        'never': Math.random() < 0.2 ? 2 : 0, // Sometimes liars
+        'never': Math.random() < 0.2 ? 2 : 0,
         'tried_once': Math.floor(Math.random() * 3) + 1,
         'occasional': Math.floor(Math.random() * 5) + 2,
         'regular': Math.floor(Math.random() * 8) + 4,
@@ -360,7 +630,6 @@ function generateLocalAnalysis(formData) {
     };
     score += appScores[formData.dating_apps] || 0;
 
-    // Red flags analysis with brutal multipliers
     const flagMultipliers = {
         'jealous': Math.floor(Math.random() * 6) + 3,
         'clingy': Math.floor(Math.random() * 4) + 2,
@@ -369,11 +638,11 @@ function generateLocalAnalysis(formData) {
         'trust_issues': Math.floor(Math.random() * 6) + 3,
         'emotional_unavailable': Math.floor(Math.random() * 8) + 6,
         'no_boundaries': Math.floor(Math.random() * 7) + 4,
-        'perfect': Math.floor(Math.random() * 5) + 2 // "Perfect" people are usually hiding something
+        'perfect': Math.floor(Math.random() * 5) + 2
     };
     score += flagMultipliers[formData.red_flag] || 0;
 
-    // Scenario responses with enhanced toxicity detection
+    // Existing scenario responses
     if (['jealous', 'drama', 'stalk'].includes(formData.scenario1)) {
         score += Math.floor(Math.random() * 8) + 3;
         redFlags.push(getRandomElement(["toxic ex stalker", "drama queen/king", "jealousy monster"]));
@@ -391,14 +660,40 @@ function generateLocalAnalysis(formData) {
         redFlags.push(getRandomElement(["psycho ex stalker", "revenge fantasizer", "trust destroyer"]));
     }
 
-    // Additional brutal factors
+    // New scenario responses
+    if (['own_it', 'escalate'].includes(formData.scenario5)) {
+        score += Math.floor(Math.random() * 6) + 3;
+        redFlags.push(getRandomElement(["overconfident flirt", "DM disaster", "chaotic texter"]));
+    }
+    if (['ghost', 'delete', 'blame'].includes(formData.scenario5)) {
+        score += Math.floor(Math.random() * 4) + 1;
+        redFlags.push(getRandomElement(["cowardly texter", "excuse generator", "ghosting guru"]));
+    }
+    if (['savage', 'ghost_date'].includes(formData.scenario6)) {
+        score += Math.floor(Math.random() * 7) + 4;
+        redFlags.push(getRandomElement(["savage dater", "ghosting pro", "vibe destroyer"]));
+    }
+    if (['bail', 'rate'].includes(formData.scenario6)) {
+        score += Math.floor(Math.random() * 5) + 2;
+        redFlags.push(getRandomElement(["judgmental dater", "escape artist", "vibe checker"]));
+    }
+
+    // Vibe factor
+    const vibeScores = {
+        'chill': Math.floor(Math.random() * 3) + 1,
+        'party': Math.floor(Math.random() * 6) + 3,
+        'introvert': Math.random() < 0.5 ? 0 : 1,
+        'extrovert': Math.floor(Math.random() * 5) + 2,
+        'mysterious': Math.floor(Math.random() * 4) + 2
+    };
+    score += vibeScores[formData.vibe] || 0;
+
     if (formData.has_photo) {
-        score += Math.floor(Math.random() * 4) + 1; // Confident enough to upload = more experience
+        score += Math.floor(Math.random() * 4) + 1;
     } else {
         redFlags.push("camera shy insecurity");
     }
 
-    // Height factors with brutal honesty
     const heightModifiers = {
         'very_tall': Math.floor(Math.random() * 5) + 2,
         'tall': Math.floor(Math.random() * 3) + 1,
@@ -408,97 +703,104 @@ function generateLocalAnalysis(formData) {
     };
     score += heightModifiers[formData.height] || 0;
 
-    // Location factor - city life = more opportunities
     const cityBonus = Math.floor(Math.random() * 4) + 1;
     score += cityBonus;
 
-    // Random life events modifier
     score += scoreModifier;
 
-    // Sometimes brutal reduction for shock value
     if (Math.random() < 0.15) {
-        score = Math.floor(score * 0.3); // Brutal reality check
+        score = Math.floor(score * 0.3);
         redFlags.push("secret virgin pretending to be experienced");
     }
-
-    // Sometimes massive inflation for shock value
     if (Math.random() < 0.1) {
-        score = Math.floor(score * 2.5); // Expose the hidden player
+        score = Math.floor(score * 2.5);
         redFlags.push("closet player hiding true nature");
     }
 
-    // Ensure realistic but varied range
     score = Math.max(0, Math.min(50, score));
 
     return generateBrutalRoast(formData, score, redFlags);
 }
 
+// Updated Brutal Roast Generation
 function generateBrutalRoast(formData, score, redFlags) {
-    const name = formData.name.split(' ')[0]; // First name only
+    const name = formData.name.split(' ')[0];
     const age = new Date().getFullYear() - new Date(formData.dob).getFullYear();
     const location = formData.location.toLowerCase();
     const height = formData.height;
+    const relationship_status = formData.relationship_status;
+    const red_flag = formData.red_flag;
+    const vibe = formData.vibe;
+    const scenario5 = formData.scenario5;
+    const scenario6 = formData.scenario6;
 
     let category, roast, emoji;
     let cityRoast = "";
     let heightRoast = "";
+    let vibeRoast = "";
+    let scenarioRoast = "";
 
-    // Add city-specific roast if major city detected
     for (let city in CITY_ROASTS) {
         if (location.includes(city)) {
-            cityRoast = " " + getRandomElement(CITY_ROASTS[city]);
+            cityRoast = " " + getRandomElement(CITY_ROASTS[city]).replace('{name}', name);
             break;
         }
     }
 
-    // Add height-specific roast
     if (HEIGHT_ROASTS[height]) {
         heightRoast = " " + getRandomElement(HEIGHT_ROASTS[height]);
     }
 
-    // Determine category and roast based on score
+    if (VIBE_ROASTS[vibe]) {
+        vibeRoast = " " + getRandomElement(VIBE_ROASTS[vibe]).replace('{name}', name);
+    }
+
+    if (SCENARIO_ROASTS.scenario5[scenario5]) {
+        scenarioRoast += " " + getRandomElement(SCENARIO_ROASTS.scenario5[scenario5]).replace('{name}', name);
+    }
+    if (SCENARIO_ROASTS.scenario6[scenario6]) {
+        scenarioRoast += " " + getRandomElement(SCENARIO_ROASTS.scenario6[scenario6]).replace('{name}', name);
+    }
+
     if (score === 0) {
         category = "Virgin Territory 🙏";
-        roast = getRandomElement(BRUTAL_ROASTS.virgin).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.virgin).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "😇";
     } else if (score <= 2) {
         category = "Innocent Angel 👼";
-        roast = getRandomElement(BRUTAL_ROASTS.innocent).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.innocent).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "😊";
     } else if (score <= 5) {
         category = "Normal Human Being 🙂";
-        roast = getRandomElement(BRUTAL_ROASTS.normal).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.normal).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "😐";
     } else if (score <= 10) {
         category = "Getting Experience 😏";
-        roast = getRandomElement(BRUTAL_ROASTS.experienced).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.experienced).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "😏";
     } else if (score <= 15) {
         category = "Experienced Player 🔥";
-        roast = getRandomElement(BRUTAL_ROASTS.experienced).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.experienced).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "😈";
     } else if (score <= 25) {
         category = "Certified F*ckboy/girl 👑";
-        roast = getRandomElement(BRUTAL_ROASTS.player).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.player).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "😱";
     } else if (score <= 35) {
         category = "Street Legend 🚀";
-        roast = getRandomElement(BRUTAL_ROASTS.legend).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.legend).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "🤯";
     } else {
         category = "Absolute Menace 💀";
-        roast = getRandomElement(BRUTAL_ROASTS.menace).replace('{name}', name);
+        roast = getRandomElement(BRUTAL_ROASTS.menace).replace('{name}', name).replace('{age}', age).replace('{relationship_status}', relationship_status).replace('{red_flag}', red_flag);
         emoji = "💀";
     }
 
-    // Combine roasts for maximum impact
-    const finalRoast = roast + cityRoast + heightRoast;
+    const finalRoast = roast + cityRoast + heightRoast + vibeRoast + scenarioRoast;
 
-    // Add brutal red flag descriptions
     let enhancedRedFlags = [];
     redFlags.forEach(flag => {
         enhancedRedFlags.push(flag);
-        // Add brutal descriptions for specific red flags
         Object.keys(RED_FLAG_DESCRIPTIONS).forEach(key => {
             if (formData.red_flag === key) {
                 enhancedRedFlags.push(getRandomElement(RED_FLAG_DESCRIPTIONS[key]));
@@ -515,7 +817,7 @@ function generateBrutalRoast(formData, score, redFlags) {
     };
 }
 
-// Main Analysis Function - removed OpenAI dependency
+// Main Analysis Function
 async function generateBrutalAnalysis(formData) {
     console.log('Generating brutal local analysis');
     return generateLocalAnalysis(formData);
@@ -528,7 +830,6 @@ async function simulateAIAnalysis(formData) {
     const loadingText = document.getElementById('loadingText');
     const consoleOutput = document.getElementById('consoleOutput');
 
-    // Clear previous console output
     consoleOutput.innerHTML = '';
 
     for (let i = 0; i < LOADING_TEXTS.length; i++) {
@@ -538,11 +839,9 @@ async function simulateAIAnalysis(formData) {
         progressBar.style.width = progress + '%';
         progressPercentage.textContent = formatPercentage(progress);
 
-        // Add console log
         const logEntry = document.createElement('div');
         logEntry.textContent = CONSOLE_LOGS[i];
 
-        // Add some styling based on log type
         if (CONSOLE_LOGS[i].includes('ERROR')) logEntry.className = 'error';
         else if (CONSOLE_LOGS[i].includes('WARNING')) logEntry.className = 'warning';
         else if (CONSOLE_LOGS[i].includes('SUCCESS')) logEntry.className = 'success';
@@ -553,11 +852,9 @@ async function simulateAIAnalysis(formData) {
         await new Promise(resolve => setTimeout(resolve, getRandomDelay(1200, 1800)));
     }
 
-    // Final dramatic pause
     loadingText.textContent = "AI thinking really hard... 🤔";
     await new Promise(resolve => setTimeout(resolve, 2500));
 
-    // Generate and display results
     const result = await generateBrutalAnalysis(formData);
     displayResults(result);
 }
@@ -571,7 +868,6 @@ function displayResults(result) {
     document.getElementById('roastText').innerHTML = result.roast;
     document.getElementById('reactionEmoji').textContent = result.emoji;
 
-    // Handle red flags section with enhanced brutality
     const redFlagsSection = document.getElementById('redFlagsSection');
     const redFlagsContent = document.getElementById('redFlagsContent');
 
@@ -652,17 +948,14 @@ async function handleFormSubmission(e) {
         return;
     }
 
-    // Validate form
     const form = document.getElementById('analysisForm');
     if (!form.checkValidity()) {
         showToast('❌ Please fill in all required fields');
         return;
     }
 
-    // Collect form data
     currentFormData = collectFormData();
 
-    // Validate age (must be 18+)
     const age = new Date().getFullYear() - new Date(currentFormData.dob).getFullYear();
     if (age < 18) {
         showToast('❌ You must be 18 or older to use this service');
@@ -677,7 +970,6 @@ async function handleFormSubmission(e) {
     analysisInProgress = true;
 
     try {
-        // Show loading page and start analysis
         showPage('loadingPage');
         await simulateAIAnalysis(currentFormData);
     } catch (error) {
@@ -691,13 +983,11 @@ async function handleFormSubmission(e) {
 
 // Event Listeners Setup
 function setupEventListeners() {
-    // Form submission
     const analysisForm = document.getElementById('analysisForm');
     if (analysisForm) {
         analysisForm.addEventListener('submit', handleFormSubmission);
     }
 
-    // Form progress tracking
     const form = document.getElementById('analysisForm');
     const inputs = form.querySelectorAll('input, select');
 
@@ -706,20 +996,16 @@ function setupEventListeners() {
         input.addEventListener('input', updateFormProgress);
     });
 
-    // Keyboard shortcuts
     document.addEventListener('keydown', function (e) {
-        // ESC key to go home
         if (e.key === 'Escape') {
             goHome();
         }
 
-        // Enter key on home page to start analysis
         if (e.key === 'Enter' && !document.getElementById('homePage').classList.contains('hidden')) {
             startAnalysis();
         }
     });
 
-    // Prevent form submission with Enter key in form fields
     form.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' && e.target.tagName !== 'BUTTON') {
             e.preventDefault();
@@ -746,7 +1032,7 @@ function initializeApp() {
     }
 }
 
-// Error Handler
+// Error Handlers
 window.addEventListener('error', function (e) {
     console.error('Global error:', e.error);
 
@@ -757,7 +1043,6 @@ window.addEventListener('error', function (e) {
     }
 });
 
-// Unhandled Promise Rejection Handler
 window.addEventListener('unhandledrejection', function (e) {
     console.error('Unhandled promise rejection:', e.reason);
 
@@ -775,13 +1060,13 @@ if (document.readyState === 'loading') {
     initializeApp();
 }
 
-// Expose functions to global scope for HTML onclick handlers
+// Expose functions to global scope
 window.startAnalysis = startAnalysis;
 window.goHome = goHome;
 window.handlePhotoUpload = handlePhotoUpload;
 window.shareResult = shareResult;
 
-// Debug functions (remove in production)
+// Debug functions
 window.debugInfo = function () {
     return {
         currentFormData,
@@ -790,18 +1075,15 @@ window.debugInfo = function () {
     };
 };
 
-// Analytics placeholder (add your analytics code here)
+// Analytics placeholder
 function trackEvent(eventName, eventData = {}) {
-    // Example: Google Analytics, Mixpanel, etc.
     console.log('Event tracked:', eventName, eventData);
 }
 
-// Track page views
 function trackPageView(pageName) {
     trackEvent('page_view', { page: pageName });
 }
 
-// Add tracking to navigation functions
 const originalShowPage = showPage;
 showPage = function (pageId) {
     originalShowPage(pageId);

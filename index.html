@@ -158,6 +158,19 @@
                             <option value="perfect">I have no red flags</option>
                         </select>
                     </div>
+
+                    <div class="question-group">
+                        <label>What’s Your Vibe?</label>
+                        <div class="hint">Pick the vibe that defines you</div>
+                        <select id="vibe" required>
+                            <option value="">Select your vibe</option>
+                            <option value="chill">Chill & laid-back</option>
+                            <option value="party">Party animal</option>
+                            <option value="introvert">Introverted & low-key</option>
+                            <option value="extrovert">Extroverted & outgoing</option>
+                            <option value="mysterious">Mysterious & enigmatic</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Scenario Testing Section -->
@@ -213,6 +226,32 @@
                             <option value="stalk_ex">Start stalking the ex</option>
                             <option value="revenge">Like your ex's photos back</option>
                             <option value="break_up">Consider it cheating, break up</option>
+                        </select>
+                    </div>
+
+                    <div class="scenario-card">
+                        <h4>Scenario 5: You accidentally send a flirty DM to the wrong person</h4>
+                        <select id="scenario5" required>
+                            <option value="">What do you do?</option>
+                            <option value="own_it">Own it and flirt anyway</option>
+                            <option value="apologize">Apologize immediately</option>
+                            <option value="ghost">Ghost and hope they forget</option>
+                            <option value="delete">Delete the message and pray</option>
+                            <option value="blame">Blame it on a friend or autocorrect</option>
+                            <option value="escalate">Double down and send another</option>
+                        </select>
+                    </div>
+
+                    <div class="scenario-card">
+                        <h4>Scenario 6: Your date shows up looking nothing like their profile pic</h4>
+                        <select id="scenario6" required>
+                            <option value="">What's your reaction?</option>
+                            <option value="play_cool">Play it cool and continue</option>
+                            <option value="call_out">Call them out politely</option>
+                            <option value="bail">Make an excuse and leave</option>
+                            <option value="savage">Make a savage comment and stay</option>
+                            <option value="ghost_date">Ghost them mid-date</option>
+                            <option value="rate">Rate their vibe and decide</option>
                         </select>
                     </div>
                 </div>
@@ -281,7 +320,7 @@
                     <h2>🎯 Analysis Complete</h2>
                     <div class="confidence-score">
                         <span>Accuracy: </span>
-                        <span class="score">94.2%</span>
+                        <span class="score">69.69%</span>
                     </div>
                 </div>
 
@@ -324,6 +363,12 @@
     <!-- Toast Notifications -->
     <div id="toast" class="toast hidden">
         <span id="toastMessage"></span>
+    </div>
+
+    <!-- Telegram Promo Toast -->
+    <div id="promoToast" class="promo-toast hidden">
+        <span id="promoMessage">Join our Telegram channel for more epic projects!</span>
+        <a href="https://t.me/+8dKviFq5AwQzZmM9" target="_blank" class="promo-btn">Join Channel</a>
     </div>
 
     <script src="script.js"></script>
